@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const title = 'My Minimal React Webpack Babel Setup';
+import App from './App';
+import './style.scss';
+import "@babel/polyfill";
 
 ReactDOM.render(
-  <div>{title}</div>,
-  document.getElementById('app')
+    <App/>,
+    document.getElementById('app')
 );
 
 module.hot.accept();
