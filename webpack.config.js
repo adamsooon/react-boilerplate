@@ -3,20 +3,24 @@ const webpack = require('webpack');
 module.exports = {
   entry: './src/index.js',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
       },
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader', "postcss-loader" ]
-    },
-    {
+        use: ['style-loader', 'css-loader', "postcss-loader"]
+      },
+      {
         test: /\.scss$/,
-        use: [ 'style-loader', 'css-loader', 'sass-loader', "postcss-loader"]
-    },
+        use: ['style-loader', 'css-loader', 'sass-loader', "postcss-loader"]
+      },
+      {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        loader: 'graphql-tag/loader'
+      }
     ]
   },
   resolve: {
